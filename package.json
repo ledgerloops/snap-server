@@ -1,0 +1,25 @@
+{
+  "name": "snap-server",
+  "version": "1.0.0",
+  "description": "Same as ../monetized-blog, but for running on Heroku. This example is the default `npm start` script, so if you deploy this repo to Heroku, it will run a monetized blog on there.",
+  "main": "agent-heroku.js",
+  "scripts": {
+    "start": "node ./snap-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ledgerloops/snap-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ledgerloops/snap-server/issues"
+  },
+  "homepage": "https://github.com/ledgerloops/snap-server#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "networkledger": "^0.9.1",
+    "pg": "^7.5.0"
+  }
+}
