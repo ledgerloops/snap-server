@@ -9,6 +9,7 @@ sudo su - postgres
 | createdb -O snap snap
 | exit
 psql postgresql://snap:snap@localhost/snap < schema.db
+psql postgresql://snap:snap@localhost/snap < finance-2018-q4.sql
 npm install
 DATABASE_URL=postgresql://snap:snap@localhost/snap npm start
 ```
