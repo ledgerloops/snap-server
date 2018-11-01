@@ -69,7 +69,10 @@ const agent = new Agent('blogger', 'payme', (eventObj) => {
     } else {
       const secretHash = results[0].secrethash;
       console.log('returning compare', eventObj, results, eventObj.peerSecret, secretHash);
-      return bcrypt.compare(eventObj.peerSecret, secretHash);
+      return bcrypt.compare(eventObj.peerSecret, secretHash).then(ret => {
+        console.log({  ret });
+        return ret;
+      });
     }
   });
 }, runSql);
