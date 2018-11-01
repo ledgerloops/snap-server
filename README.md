@@ -2,8 +2,13 @@
 Basic server running SNAP ledgers behind a Hubbie server. Used (as an initial test case to guide development) to keep track of the ToS;DR project finance. Requires postgres and node.
 
 ```sh
-createdb tosdr_finance
-psql tosdr_finance < schema.db
+sudo su - postgres
+| createuser snap --pwprompt
+| | Enter password for new role: snap
+| | Enter it again: snap
+| createdb -O snap snap
+| exit
+psql postgresql://snap:snap@localhost/snap < schema.db
 npm install
-DATABASE_URL=postgresql://localhost/tosdr_finance npm start
+DATABASE_URL=postgresql://snap:snap@localhost/snap npm start
 ```
